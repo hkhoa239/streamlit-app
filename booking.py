@@ -1,8 +1,8 @@
 import streamlit as st
 import pandas as pd
-@st.cache
+@st.cache_data
 def load_data():
-    return pd.read_json('booking.parquet', lines=True)
+    return pd.read_parquet('booking.parquet')
 def main():
     st.title('Booking Data Visualization')
     data = load_data()
